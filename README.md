@@ -13,3 +13,5 @@ yazdığınızda programın verdiğiniz tarihteki çıktısını alabilirsiniz.
 dosyayı kaydettiğiniz dizini düzelterek bu komutu terminalde çalıştırırsanız. Terminali her açtığınızda programı çalıştırarak size 13. Cuma'ya kaç gün kaldığını hatırlatacaktır.
 
 ![Ekran görüntüsü](https://github.com/metatronslove/cuma13/blob/main/Ekran%20görüntüsü_2024-08-03_13-06-32.png?raw=true "Ekran görüntüsü")
+
+![Ekran görüntüsü](https://github.com/metatronslove/cuma13/blob/main/Ekran%20görüntüsü_2024-08-03_18-42-55.png?raw=true "Ekran görüntüsü")

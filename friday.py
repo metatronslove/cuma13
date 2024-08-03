@@ -31,6 +31,6 @@ cuma = datetime.datetime.strptime(friday, "%Y/%m/%d")
 difference = (cuma - bugun).days
 ay = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
 if int(difference) > 0:
-	print(str(difference) + " gün sonra " + cuma.strftime("%d") + " " + ay[int(cuma.strftime("%m"))-1] + " " + cuma.strftime("%Y") + " Cuma")
+	print("\n" + str(difference) + " gün sonra " + cuma.strftime("%d") + " " + ay[int(cuma.strftime("%m"))-1] + " " + cuma.strftime("%Y") + " Cuma\n")
 else:
-	print("Bugün " + cuma.strftime("%d") + " " + ay[int(cuma.strftime("%m"))-1] + " " + cuma.strftime("%Y") + " Cuma")
+	print("\nBugün " + cuma.strftime("%d") + " " + ay[int(cuma.strftime("%m"))-1] + " " + cuma.strftime("%Y") + " Cuma\n")

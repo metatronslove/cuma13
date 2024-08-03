@@ -1,2 +1,3 @@
-# cuma13
-Python bir sonraki 13. Cuma'yı söylüyor
+***python3 friday.py***
+
+Bir sonraki 13.Cuma'ya kaç gün kaldığını gösteriyor.

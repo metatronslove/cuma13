@@ -1,10 +1,9 @@
 ***friday.js and friday.min.js***
 
 bu dosya 3 fonksiyon içerir; artancuma(), azalancuma() ve ChangeMonth()
-fonksiyonları dosyada tanımlanmıştır. Bu fonksiyonların amacı
-LibreOffice Hesap Tablosu ve belki Microsoft Excel makroları arasında
-Kullanıcı Tanımlı Fonksiyonlar olarak tablo formullerinde yararlı
-olmasıdır.
+fonksiyonları dosyada tanımlanmıştır. Bu fonksiyonların amacı etkileşimli
+web sayfası JavaScript'leri arasında Kullanıcı Tanımlı Fonksiyonlar
+olarak kodlamalarda yararlı olmasıdır.
 
 ***artancuma() ve azalancuma()***
 
@@ -12,9 +11,6 @@ bu fonksiyonlar tek parametre olarak bir tarih girildiği zaman, girilen
 tarihten bir sonraki veya bir önceki 13. Cuma tanımına uyan tarihi
 döndürür. Fonksiyon parametresi olarak girilen tarih öğesi diğer tüm
 fonksiyonlarda olduğu gibi formül ve matematiksel düzenler içerebilir.
-Bu fonksiyonlarla girilen tarih verisi olağan arttırım veya azaltım
-formül düzenlemeleri yapılarak formül yayma sonuçları döndürmeye
-elverişlidir.
 
 ***=artancuma("09.08.1945")***
 

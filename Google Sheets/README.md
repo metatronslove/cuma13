@@ -1,10 +1,9 @@
 ***friday.gs and friday.min.gs***
 
 bu dosya 3 fonksiyon içerir; artancuma(), azalancuma() ve ChangeMonth()
-fonksiyonları dosyada tanımlanmıştır. Bu fonksiyonların amacı
-LibreOffice Hesap Tablosu ve belki Microsoft Excel makroları arasında
-Kullanıcı Tanımlı Fonksiyonlar olarak tablo formullerinde yararlı
-olmasıdır.
+fonksiyonları dosyada tanımlanmıştır. Bu fonksiyonların amacı Google
+Apps Script fonksiyonları arasında Kullanıcı Tanımlı Fonksiyonlar 
+olarak tablo formullerinde yararlı olmasıdır.
 
 ***artancuma() ve azalancuma()***
 

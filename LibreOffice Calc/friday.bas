@@ -35,5 +35,5 @@ Function ChangeMonth(Optional tarih As Date, Optional Job As Variant) As Date
 			newyear = year(tarih) + 1
 		End If
 	End If
-	ChangeMonth = DateSerial(newyear, newmonth, 13)
+	ChangeMonth = DateSerial(newyear, newmonth, day(tarih))
 End Function

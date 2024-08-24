@@ -71,5 +71,13 @@ changemonth() {
 	datethis="$newmonth/$(date -d "$datetochange" +"%d")/$newyear"
 	echo "$(date -d "$datethis" +"%m/%d/%Y")"
 }
+today="$(date +"%m/%d/%Y")"
 nextfriday="$(artancuma "$(date +"%m/%d/%Y")")"
-echo "Sonraki 13.Cuma: $(date -d "$nextfriday" +"%d %B %Y Cuma")"
+dnext="$(date -d "$nextfriday" +"%s")"
+dthis="$(date -d "$today" +"%s")"
+difference=$((dnext-dthis))
+secondstodays=$((60*60*24))
+daysleft=$((difference/secondstodays))
+echo "
+$daysleft gün sonra $(date -d "$nextfriday" +"%d %B %Y Cuma")
+"

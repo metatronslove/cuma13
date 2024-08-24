@@ -1,6 +1,6 @@
 #!/bin/bash
 artancuma() {
-	testthis="$(date -d "$1" +"%m/%d/%Y")"
+	testthis="$(date -d "$1" +"%Y-%m-%d")"
 	testdate="$(getDate $testthis)"
 	if [[ ${testdate:0:1} == "0" ]]; then
 		testdate=${testdate:1:1}
@@ -8,8 +8,8 @@ artancuma() {
 	if [[ $((testdate)) -gt 13 ]]; then
 		testthis="$(changemonth $testthis 1)"
 	fi
-	datethis="$(date -d "$testthis" +"%m")/13/$(date -d "$testthis" +"%Y")"
-	testthis="$(date -d "$datethis" +"%m/%d/%Y")"
+	datethis="$(date -d "$testthis" +"%Y")-$(date -d "$testthis" +"%m")-13"
+	testthis="$(date -d "$datethis" +"%Y-%m-%d")"
 	testday="$(getDay $testthis)"
 	while [[ $((testday)) -ne 5 ]]; do
 		testthis="$(changemonth $testthis 1)"
@@ -18,7 +18,7 @@ artancuma() {
 	echo $testthis
 }
 azalancuma() {
-	testthis="$(date -d "$1" +"%m/%d/%Y")"
+	testthis="$(date -d "$1" +"%Y-%m-%d")"
 	testdate="$(getDate $testthis)"
 	if [[ ${testdate:0:1} == "0" ]]; then
 		testdate=${testdate:1:1}
@@ -26,8 +26,8 @@ azalancuma() {
 	if [[ $((testdate)) -lt 13 ]]; then
 		testthis="$(changemonth $testthis -1)"
 	fi
-	datethis="$(date -d "$testthis" +"%m")/13/$(date -d "$testthis" +"%Y")"
-	testthis="$(date -d "$datethis" +"%m/%d/%Y")"
+	datethis="$(date -d "$testthis" +"%Y")-$(date -d "$testthis" +"%m")-13"
+	testthis="$(date -d "$datethis" +"%Y-%m-%d")"
 	testday="$(getDay $testthis)"
 	while [[ $((testday)) -ne 5 ]]; do
 		testthis="$(changemonth $testthis -1)"
@@ -44,7 +44,7 @@ getDate() {
 	echo $((datetoget))
 }
 changemonth() {
-	datetochange="$(date -d "$1" +"%m/%d/%Y")"
+	datetochange="$(date -d "$1" +"%Y-%m-%d")"
 	monthofdate="$(date -d "$datetochange" +"%m")"
 	yearofdate="$(date -d "$datetochange" +"%Y")"
 	job=$2
@@ -68,11 +68,11 @@ changemonth() {
 			newmonth="1"
 		fi
 	fi
-	datethis="$newmonth/$(date -d "$datetochange" +"%d")/$newyear"
-	echo "$(date -d "$datethis" +"%m/%d/%Y")"
+	datethis="$newyear-$newmonth-$(date -d "$datetochange" +"%d")"
+	echo "$(date -d "$datethis" +"%Y-%m-%d")"
 }
-today="$(date +"%m/%d/%Y")"
-nextfriday="$(artancuma "$(date +"%m/%d/%Y")")"
+today="$(date +"%Y-%m-%d")"
+nextfriday="$(artancuma $today)"
 dnext="$(date -d "$nextfriday" +"%s")"
 dthis="$(date -d "$today" +"%s")"
 difference=$((dnext-dthis))

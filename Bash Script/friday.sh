@@ -78,6 +78,12 @@ dthis="$(date -d "$today" +"%s")"
 difference=$((dnext-dthis))
 secondstodays=$((60*60*24))
 daysleft=$((difference/secondstodays))
-echo "
+if (( $((daysleft)) > 0 )); then
+	echo "
 $daysleft gün sonra $(date -d "$nextfriday" +"%d %B %Y Cuma")
-"
+	"
+else
+	echo "
+Bugün $(date -d "$nextfriday" +"%d %B %Y Cuma")
+	"
+fi

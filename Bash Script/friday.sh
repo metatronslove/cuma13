@@ -6,7 +6,7 @@ artancuma() {
 		testdate=${testdate:1:1}
 	fi
 	if [[ $((testdate)) -gt 13 ]]; then
-		testthis="$(date -d "$testdate" +"%Y")-$(date -d "$testdate" +"%m")-13"
+		testthis="$(date -d "$testthis" +"%Y")-$(date -d "$testthis" +"%m")-13"
 		testthis="$(changemonth $testthis 1)"
 	fi
 	datethis="$(date -d "$testthis" +"%Y")-$(date -d "$testthis" +"%m")-13"

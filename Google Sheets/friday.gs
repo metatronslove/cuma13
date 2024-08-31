@@ -1,6 +1,9 @@
 function artancuma(tarih) {
 	let testthis = new Date(tarih);
-	if (testthis.getDate() > 13) testthis = new Date(changemonth(testthis, 1));
+	if (testthis.getDate() > 13) {
+		testthis.setDate(13);
+		testthis = new Date(changemonth(testthis, 1))
+	}
 	testthis.setDate(13);
 	let testday = testthis.getDay();
 	while (testday != 5) {

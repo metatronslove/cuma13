@@ -1,13 +1,17 @@
-Function artancuma(Optional tarih As Date) As Date
+Function artancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optional haftagunu As Variant) As Date
 	Dim testthis As Date
-	If day(tarih) > 13 Then tarih = ChangeMonth(tarih, 1)
-	testthis = DateSerial(year(tarih), month(tarih), 13)
+	If day(tarih) > 13 Then
+		testthis = DateSerial(year(tarih), month(tarih), 13)
+		tarih = ChangeMonth(tarih, 1)
+	Else
+		testthis = DateSerial(year(tarih), month(tarih), 13)
+	End If
 	Do Until weekday(testthis) = 6
 		testthis = ChangeMonth(testthis, 1)
 	Loop
 	artancuma = testthis
 End Function
-Function azalancuma(Optional tarih As Date) As Date
+Function azalancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optional haftagunu As Variant) As Date
 	Dim testthis As Date
 	If day(tarih) < 13 Then tarih = ChangeMonth(tarih, -1)
 	testthis = DateSerial(year(tarih), month(tarih), 13)
@@ -15,6 +19,8 @@ Function azalancuma(Optional tarih As Date) As Date
 		testthis = ChangeMonth(testthis, -1)
 	Loop
 	azalancuma = testthis
+End Function
+Function haftadagun(Optional gun As Variant) As Integer
 End Function
 Function ChangeMonth(Optional tarih As Date, Optional Job As Variant) As Date
 	Dim newmonth, newyear As Integer

@@ -2,7 +2,7 @@ Function artancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optiona
 	Dim testthis As Date
 	If day(tarih) > 13 Then
 		testthis = DateSerial(year(tarih), month(tarih), 13)
-		tarih = ChangeMonth(tarih, 1)
+		testthis = ChangeMonth(testthis, 1)
 	Else
 		testthis = DateSerial(year(tarih), month(tarih), 13)
 	End If

@@ -2,9 +2,6 @@
 artancuma() {
 	testthis="$(date -d "$1" +"%Y-%m-%d")"
 	testdate="$(getDate $testthis)"
-	if [[ ${testdate:0:1} == "0" ]]; then
-		testdate=${testdate:1:1}
-	fi
 	if [[ $((testdate)) -gt 13 ]]; then
 		testthis="$(date -d "$testthis" +"%Y")-$(date -d "$testthis" +"%m")-13"
 		testthis="$(changemonth $testthis 1)"
@@ -21,9 +18,6 @@ artancuma() {
 azalancuma() {
 	testthis="$(date -d "$1" +"%Y-%m-%d")"
 	testdate="$(getDate $testthis)"
-	if [[ ${testdate:0:1} == "0" ]]; then
-		testdate=${testdate:1:1}
-	fi
 	if [[ $((testdate)) -lt 13 ]]; then
 		testthis="$(changemonth $testthis -1)"
 	fi
@@ -42,6 +36,9 @@ getDay() {
 }
 getDate() {
 	datetoget="$(date -d "$1" +"%d")"
+	if [[ ${datetoget:0:1} == "0" ]]; then
+		datetoget=${datetoget:1:1}
+	fi
 	echo $((datetoget))
 }
 changemonth() {

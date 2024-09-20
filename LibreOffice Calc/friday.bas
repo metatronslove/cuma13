@@ -1,4 +1,4 @@
-Function artancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optional haftagunu As Variant) As Date
+Function artancuma(Optional tarih As Date) As Date
 	Dim testthis As Date
 	If day(tarih) > 13 Then
 		testthis = DateSerial(year(tarih), month(tarih), 13)
@@ -11,7 +11,7 @@ Function artancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optiona
 	Loop
 	artancuma = testthis
 End Function
-Function azalancuma(Optional tarih As Date, Optional ayinkaci As Integer, Optional haftagunu As Variant) As Date
+Function azalancuma(Optional tarih As Date) As Date
 	Dim testthis As Date
 	If day(tarih) < 13 Then tarih = ChangeMonth(tarih, -1)
 	testthis = DateSerial(year(tarih), month(tarih), 13)
